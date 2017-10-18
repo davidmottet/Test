@@ -22,33 +22,29 @@ if (process.env.NODE_ENV === 'prod') {
 			cluster.fork();
 		}
 
-		cluster.on('exit', (worker, code, signal) => {
-			console.log(`worker ${worker.process.pid} died`);
+		cluster.on('exit', (_worker, _code, _signal) => {
+			console.log(`worker ${_worker.process.pid} died`);
 		});
 	} else {
 		// Workers can share any TCP connection
 		// In this case it is an HTTP server
-		// web.http.createServer((req, res) => {
-		// 	res.writeHead(200);
-		// 	res.end('hello world\n');
+		// web.http.createServer((_req, _res) => {
+		// 	web.routes(_req, _res);
 		// }).listen(config.PORT.http || 8000);
 
-		web.https.createServer(options, (req, res) => {
-			res.writeHead(200);
-			res.end('hello world\n');
+		web.https.createServer(options, (_req, _res) => {
+			web.routes(_req, _res);
 		}).listen(config.PORT.https || 8000);
 
 		console.log(`Worker ${process.pid} started`);
 	}
 } else {
 	console.log(`Server run at port : ${config.PORT.https || 8000}`);
-	// web.http.createServer((req, res) => {
-	// 	res.writeHead(200);
-	// 	res.end('hello world\n');
+	// web.http.createServer((_req, _res) => 
+	// 	web.routes(_req, _res);
 	// }).listen(config.PORT.http || 8000);
 
-	web.https.createServer(options, (req, res) => {
-		res.writeHead(200);
-		res.end('hello world\n');
+	web.https.createServer(options, (_req, _res) => {
+		web.routes(_req, _res);
 	}).listen(config.PORT.https || 8000);
 }

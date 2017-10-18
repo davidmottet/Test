@@ -1,11 +1,12 @@
 'use strict';
 const config = require('./config/config');
-const http = require('http');
-const https = require('https');
-
 const web = {};
 
-web["https"] = https;
-web["http"] = http;
+// TODO : delete
+web["http"] = require('http');
+
+web["https"] = require('https');
+
+web["routes"] = require('./routes');
 
 module.exports = web;
