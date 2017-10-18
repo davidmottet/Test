@@ -10,7 +10,9 @@
   "license": "MIT",
   "dependencies": {
     "cluster": "^0.7.7",
+    "fs": "0.0.1-security",
     "http": "0.0.0",
+    "https": "^1.0.0",
     "os": "^0.1.1"
   }
 }

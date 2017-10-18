@@ -2,14 +2,14 @@
 
 if (process.env.NODE_ENV === 'prod') {
 	module.exports = {
-		"PORT": 3030,
+		"PORT": {"http": 80, "https": 443},
 		"session": {
 			"secret": 'rickandmorty'
 		}
 	}
 } else {
 	module.exports = {
-		"PORT": 3000,
+		"PORT": {"http": 3000, "https": 3000},
 		"session": {
 			"secret": 'rickandmorty'
 		}
