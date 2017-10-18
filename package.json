@@ -1,0 +1,16 @@
+{
+  "name": "node-press",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "NODE_ENV=prod node bin/www",
+    "dev": "NODE_ENV=dev nodemon bin/www"
+  },
+  "author": "David MOTTET",
+  "license": "MIT",
+  "dependencies": {
+    "cluster": "^0.7.7",
+    "http": "0.0.0",
+    "os": "^0.1.1"
+  }
+}
