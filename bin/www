@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === 'prod') {
 		// }).listen(config.PORT.http || 8000);
 
 		web.https.createServer(options, (_req, _res) => {
-			web.routes(_req, _res);
+			web.router(_req, _res);
 		}).listen(config.PORT.https || 8000);
 
 		console.log(`Worker ${process.pid} started`);
@@ -45,6 +45,6 @@ if (process.env.NODE_ENV === 'prod') {
 	// }).listen(config.PORT.http || 8000);
 
 	web.https.createServer(options, (_req, _res) => {
-		web.routes(_req, _res);
+		web.router(_req, _res);
 	}).listen(config.PORT.https || 8000);
 }

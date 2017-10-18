@@ -7,6 +7,6 @@ web["http"] = require('http');
 
 web["https"] = require('https');
 
-web["routes"] = require('./routes');
+web["router"] = require('./router');
 
 module.exports = web;
