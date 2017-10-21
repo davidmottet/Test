@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "NODE_ENV=prod node bin/www",
-    "dev": "NODE_ENV=dev nodemon bin/www"
+    "start": "node bin/www",
+    "dev": "nodemon bin/www"
   },
   "author": "David MOTTET",
   "license": "MIT",
