@@ -6,8 +6,7 @@ const path = require("path");
 const fs = require("fs");
 
 module.exports = (_req, _res, _file) => {
-	// TO CHANGE: check other method 
-	const filePath = `${global.dirname}/${config.file}${_file.dir}/${_file.base}`;
+	const filePath = `${global.dirname}/content/themes/${config.theme}/${_file.dir}/${_file.base}`;
 
 	if (fs.existsSync(filePath)) {
 		const stat = fs.statSync(filePath);

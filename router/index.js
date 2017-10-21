@@ -19,7 +19,7 @@ module.exports = (_req, _res) => {
 			if (parse.ext) {
 				routerGetFile(_req, _res, parse);
 			} else {
-				routerGet(_req, _res);
+				routerGet(_req, _res, parse);
 			}
 		// case "POST": //user or PUT /user:/id to create a new user,
 

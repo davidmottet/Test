@@ -6,7 +6,8 @@ if (process.env.NODE_ENV === 'prod') {
 		"session": {
 			"secret": 'rickandmorty'
 		},
-		"file": "public"
+		"theme": "default",
+		"template": "ejs"
 	}
 } else {
 	module.exports = {
@@ -14,6 +15,7 @@ if (process.env.NODE_ENV === 'prod') {
 		"session": {
 			"secret": 'rickandmorty'
 		},
-		"file": "public"
+		"theme": "default",
+		"template": "ejs"
 	}
 }

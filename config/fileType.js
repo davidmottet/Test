@@ -7,5 +7,6 @@ module.exports = {
 	".jpg": "image/jpeg",
 	".jpeg": "image/jpeg",
 	".woff": "application/font-woff",
-	".woff2": "font/woff2"
+	".woff2": "font/woff2",
+	".ejs": "text/html"
 }
