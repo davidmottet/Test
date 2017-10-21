@@ -4,7 +4,6 @@ const web = {};
 
 global.dirname = __dirname;
 
-// TODO : delete
 web["http"] = require('http');
 
 web["https"] = require('https');

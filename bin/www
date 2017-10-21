@@ -14,7 +14,7 @@ const options = {
 
 if (process.env.NODE_ENV === 'prod') {
 	if (cluster.isMaster) {
-		console.log(`Server run at port : ${config.PORT.https || 8000}`);
+		console.log(`Server run at port : ${config.PORT.https}`);
 		console.log(`Master ${process.pid} is running`);
 
 		// Fork workers.
@@ -28,26 +28,36 @@ if (process.env.NODE_ENV === 'prod') {
 	} else {
 		// Workers can share any TCP connection
 		// In this case it is an HTTP server
-		web.http.createServer((_req, _res) => {
-			web.router(_req, _res);
-		}).listen(config.PORT.http || 8000);
+		if (config.PORT.http) {
+			web.http.createServer((_req, _res) => {
+				web.router(_req, _res);
+			}).listen(config.PORT.http);
+		}
 
 		// In this case it is an HTTPS server
-		web.https.createServer(options, (_req, _res) => {
-			web.router(_req, _res);
-		}).listen(config.PORT.https || 8000);
+		if (config.PORT.https) {
+			web.https.createServer(options, (_req, _res) => {
+				web.router(_req, _res);
+			}).listen(config.PORT.https);
+		}
 
 		console.log(`Worker ${process.pid} started`);
 	}
 } else {
-	console.log(`Server run at port : ${config.PORT.https || 8000}`);
 	// In this case it is an HTTP server
-	web.http.createServer((_req, _res) => {
-		web.router(_req, _res);
-	}).listen(config.PORT.http || 8000);
+
+	if (config.PORT.http) {
+		console.log(`Server http run at port : ${config.PORT.http}`);
+		web.http.createServer((_req, _res) => {
+			web.router(_req, _res);
+		}).listen(config.PORT.http);
+	}
 
 	// In this case it is an HTTPS server
-	web.https.createServer(options, (_req, _res) => {
-		web.router(_req, _res);
-	}).listen(config.PORT.https || 8000);
+	if (config.PORT.https) {
+		console.log(`Server https run at port : ${config.PORT.https}`);
+		web.https.createServer(options, (_req, _res) => {
+			web.router(_req, _res);
+		}).listen(config.PORT.https);
+	}
 }
