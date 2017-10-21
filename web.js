@@ -2,6 +2,8 @@
 const config = require('./config/config');
 const web = {};
 
+global.dirname = __dirname;
+
 // TODO : delete
 web["http"] = require('http');
 
