@@ -28,10 +28,11 @@ if (process.env.NODE_ENV === 'prod') {
 	} else {
 		// Workers can share any TCP connection
 		// In this case it is an HTTP server
-		// web.http.createServer((_req, _res) => {
-		// 	web.routes(_req, _res);
-		// }).listen(config.PORT.http || 8000);
+		web.http.createServer((_req, _res) => {
+			web.router(_req, _res);
+		}).listen(config.PORT.http || 8000);
 
+		// In this case it is an HTTPS server
 		web.https.createServer(options, (_req, _res) => {
 			web.router(_req, _res);
 		}).listen(config.PORT.https || 8000);
@@ -40,10 +41,12 @@ if (process.env.NODE_ENV === 'prod') {
 	}
 } else {
 	console.log(`Server run at port : ${config.PORT.https || 8000}`);
-	// web.http.createServer((_req, _res) => 
-	// 	web.routes(_req, _res);
-	// }).listen(config.PORT.http || 8000);
+	// In this case it is an HTTP server
+	web.http.createServer((_req, _res) => {
+		web.router(_req, _res);
+	}).listen(config.PORT.http || 8000);
 
+	// In this case it is an HTTPS server
 	web.https.createServer(options, (_req, _res) => {
 		web.router(_req, _res);
 	}).listen(config.PORT.https || 8000);

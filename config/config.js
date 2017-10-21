@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === 'prod') {
 	}
 } else {
 	module.exports = {
-		"PORT": {"http": 3000, "https": 3000},
+		"PORT": {"http": 3000, "https": 3030},
 		"session": {
 			"secret": 'rickandmorty'
 		},
