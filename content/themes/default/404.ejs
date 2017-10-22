@@ -4,7 +4,27 @@
 		<%- include("./head"); %>
 	</head>
 	<body>
-		<%- include("./header"); %>
+		
+		<script>
+			function loadCSS(e,n,o,t){"use strict";var d=window.document.createElement("link"),i=n||window.document.getElementsByTagName("script")[0],r=window.document.styleSheets;return d.rel="stylesheet",d.href=e,d.media="only x",t&&(d.onload=t),i.parentNode.insertBefore(d,i),d.onloadcssdefined=function(e){for(var n,o=0;o<r.length;o++)r[o].href&&r[o].href===d.href&&(n=!0);n?e():setTimeout(function(){d.onloadcssdefined(e)})},d.onloadcssdefined(function(){d.media=o||"all"}),d}
+			function onloadCSS(n,o){n.onload=function(){n.onload=null,o&&o.call(n)},"isApplicationInstalled"in navigator&&"onloadcssdefined"in n&&n.onloadcssdefined(o)}
+		</script>
+		<main class="main" style="display: none;">
+			<script>
+				onloadCSS(loadCSS('/stylesheets/main.css'), function () {
+					document.querySelector(".main")
+						.style.display = "";
+				});
+			</script>
+			<noscript>
+				<link rel="stylesheet" href="/stylesheets/main.css" />
+			</noscript>
+
+			<div class="container">
+				<!--  -->
+				AIE ! CETTE PAGE EST INTROUVABLE.
+			</div>
+		</main>
 		
 		<%- include("./footer"); %>
 	</body>

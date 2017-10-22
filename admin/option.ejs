@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="">
 	<head>
-		<%- include("./head"); %>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>option</title>
+
+
+		<!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+		<!--
+		<link rel="canonical" href="http://www.example.com/">
+		-->
+
+		<!-- Page styles -->
+		<style>/* Basic Style */</style>
 	</head>
 	<body>
-		<%- include("./header"); %>
+		<h1>Option</h1>
+		<p>Welcome to Option!</p>
 		<script>
 			function loadCSS(e,n,o,t){"use strict";var d=window.document.createElement("link"),i=n||window.document.getElementsByTagName("script")[0],r=window.document.styleSheets;return d.rel="stylesheet",d.href=e,d.media="only x",t&&(d.onload=t),i.parentNode.insertBefore(d,i),d.onloadcssdefined=function(e){for(var n,o=0;o<r.length;o++)r[o].href&&r[o].href===d.href&&(n=!0);n?e():setTimeout(function(){d.onloadcssdefined(e)})},d.onloadcssdefined(function(){d.media=o||"all"}),d}
 			function onloadCSS(n,o){n.onload=function(){n.onload=null,o&&o.call(n)},"isApplicationInstalled"in navigator&&"onloadcssdefined"in n&&n.onloadcssdefined(o)}
@@ -25,6 +39,6 @@
 				
 			</div>
 		</main>
-		<%- include("./footer"); %>
+		<script type="text/javascript" src="/javascripts/main.js"></script>
 	</body>
 </html>

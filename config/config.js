@@ -13,5 +13,8 @@ module.exports = {
 		"secret": 'rickandmorty'
 	},
 	"theme": "default",
+	"admin": {
+		"link": "np-admin"
+	},
 	"template": "ejs"
 }
