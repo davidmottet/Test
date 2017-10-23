@@ -2,6 +2,7 @@
 const config = require('../config/config');
 const configEjs = require('../config/ejs');
 const configFileType = require('../config/fileType');
+const database = require('../database');
 
 const path = require('path');
 const renderFile = require('ejs').renderFile;
